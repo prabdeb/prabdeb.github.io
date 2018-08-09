@@ -7,3 +7,9 @@
   repo: ParallelShellExecution
   img: /static/assets/img/landing/parallel.jpg
   desc: For executing any Linux Commands in Parallel - A Perl based setup
+
+- name: Publication - Mn-doping effects of B-site ordered La2CoRuO6
+  i18n: publication1
+  url: https://inis.iaea.org/search/search.aspx?orig_q=RN:39020706
+  img: /static/assets/img/landing/La2CoRuO6.jpeg
+  desc: Dec 31, 2007 publication description ISBN 81-8372-035-8; p. 1087-1088; 52. DAE solid state physics symposium; Mysore (India); 27-31 Dec 2007
