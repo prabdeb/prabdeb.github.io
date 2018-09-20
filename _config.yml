@@ -27,7 +27,7 @@ author:  # change following line to your infomation.
   skill_icon2:
     - name: icon-aws
     - name: icon-go
-  desc: I am groot!.  # Describe yourself.
+  desc: Automation is my primary mantra. I have transformed myself through Waterfall -> Agile -> DevOps -> Bot-driven culture. I feel excited about something that is almost impossible. I love to try/learn/unlearn new things daily, in parallel I do realize importance of business operation that I get paid for.  # Describe yourself.
 
 # comment
 #disqus:  # if you wanna comment feature, go to https://disqus.com/ to get your configuration; if not, comment following two lines.
