@@ -15,6 +15,13 @@
   img: /static/assets/img/landing/Go-Logo_Aqua.png
   desc: Go utility for converting JSON data type to Google Chart structure so that DataTable can understand
 
+- name: Drone Webex Teams Plugin
+  i18n: drone-webex-teams-plugin
+  gh_user: cisco-sso
+  repo: drone-webex-teams-plugin
+  img: /static/assets/img/landing/drone-logo_512.png
+  desc: Drone plugin to send build status notifications via Cisco WebEx Team
+
 - name: Publication - Mn-doping effects of B-site ordered La2CoRuO6
   i18n: publication1
   url: https://inis.iaea.org/search/search.aspx?orig_q=RN:39020706
