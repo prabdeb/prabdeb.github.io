@@ -8,6 +8,13 @@
   img: /static/assets/img/landing/parallel.jpg
   desc: For executing any Linux Commands in Parallel - A Perl based setup
 
+- name: Go Google Chart Librery
+  i18n: go-google-chart
+  gh_user: prabdeb
+  repo: go-google-chart
+  img: /static/assets/img/landing/Go-Logo_Aqua.png
+  desc: Go utility for converting JSON data type to Google Chart structure so that DataTable can understand
+
 - name: Publication - Mn-doping effects of B-site ordered La2CoRuO6
   i18n: publication1
   url: https://inis.iaea.org/search/search.aspx?orig_q=RN:39020706
