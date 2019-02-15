@@ -22,6 +22,20 @@
   img: /static/assets/img/landing/drone-logo_512.png
   desc: Drone plugin to send build status notifications via Cisco WebEx Team
 
+- name: Go Utils
+  i18n: go-utils
+  gh_user: prabdeb
+  repo: go-utils
+  img: /static/assets/img/landing/Go-Logo_Blue.png
+  desc: Small utilities for GO like Calendar, Contains etc.
+
+- name: Simple Go Gin Server
+  i18n: simple-go-server
+  gh_user: prabdeb
+  repo: simple-go-server
+  img: /static/assets/img/landing/Go-Logo_Black.png
+  desc: This is a simple GO server to display basic OS informations
+
 - name: Publication - Mn-doping effects of B-site ordered La2CoRuO6
   i18n: publication1
   url: https://inis.iaea.org/search/search.aspx?orig_q=RN:39020706
