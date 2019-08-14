@@ -14,8 +14,9 @@ As Docker containers become an almost ubiquitous method of packaging and deployi
 In this post I will walk through couple of tools/methodologies that are well known for Docker image scan and their advantages/disadvantages.
 This might be useful for making the decision of right choice of the tool.
 
-
 ## What Scan Does
+
+------------------------------------------
 
 Let's have a quick look into Docker image, what it is and how it built and run. To build a Docker image a `Dockerfile` is needed at first. `Dockerfile` contains all package/data/configuration needed for application to run, basically it is blue-print of application runtime environment. During container run, it loads all the package and start application as crafted in `Dockerfile`, the same way OS boots up and start the process.
 
@@ -56,13 +57,9 @@ However it is important to note what all the scan can not cover, it might not co
 
 Even I have seen common issues with not identifying vulnerabilities in downloaded packages, they are majorly because of renaming the downloaded packages and removing the version information's.
 
+## In-build Scan in Registry
 
-## Where to scan
-
-Now we know what scan does and why so important, let's take a look where all the scan can be performed.
-
-
-### Scan in Registry
+------------------------------------------
 
 There are some Docker on-premises/enterprise registry providers like [Harbor](https://goharbor.io/) - a CNCF project, [QUAY](https://coreos.com/quay-enterprise/) - a CoreOS Product, [Docker Enterprise Hub](https://www.docker.com/products/docker-hub), etc. who felt Docker image scan is a key aspect of a registry and made scan as a built-in feature.
 
@@ -72,100 +69,99 @@ Scanning in Registry is very simple, most of the cases nothing needs to be done 
 
 In some registry solution like Harbor supports additional features to invoke on-demand scan, reports via API (needed to enforce policy, I will discuss that later in this post), etc. Check the document of Harbor for more details.
 
+## Scan in Dedicated tools
 
-### Scan in Dedicated tools
+------------------------------------------
 
 There are several open-source/commercial tools are available to perform Docker image security scan. I will try to cover about the tools I have came across so far. Please note I am keeping open-source community in mind :). Hence some of the disadvantages can be ruled-out if you approach to enterprise offering of the tools.
 
-
-#### [Clair](https://coreos.com/clair/docs/latest/)
-
-**Advantages:**
-
-1. Most used open-source tools for scanning, inbuilt availability in Docker registry tools like Harbor/Quay
-2. Strong community support
-3. CI/CD Integration
-4. Easy setup
-5. Completely open-source and can be extended easily
-
-**Disadvantages:**
-
-1. Week vulnerability database
-2. Package detection limited to only Package managers (dpkg/rpm/apk/etc.)
-3. Not much things can be done by API's
-4. Lack of documentation
-5. No Kubernetes integration
-
-
-#### [Anchore](https://anchore.com/)
+### [Clair](https://coreos.com/clair/docs/latest/)
 
 **Advantages:**
 
-1. Widely used by several companies like Cisco/Microsoft/eBay/Atlassian, etc.
-2. Strong CVE database
-3. Support for user defined policy enforcement, very important for enterprises
-4. Kubernetes integration using an admission controller, the much needed in recent days
-5. CI/CD Integration
-6. Good API support
-7. Easy to install & maintain
-8. Supports software packages along with os packages
+* Most used open-source tools for scanning, inbuilt availability in Docker registry tools like Harbor/Quay
+* Strong community support
+* CI/CD Integration
+* Easy setup
+* Completely open-source and can be extended easily
 
 **Disadvantages:**
 
-1. No graphical UI in open-source version
-2. Several features like Policy GUI editor, RBAC, air-gapped data feed, etc. are available in Enterprise only
-3. No graphical reports in open-source version
-4. There are few false positives in vulnerabilities finding (based on some sample images I have used to scan)
+* Week vulnerability database
+* Package detection limited to only Package managers (dpkg/rpm/apk/etc.)
+* Not much things can be done by API's
+* Lack of documentation
+* No Kubernetes integration
 
-
-#### [Aqua](https://www.aquasec.com/)
+### [Anchore](https://anchore.com/)
 
 **Advantages:**
 
-1. Widely used by several companies
-2. Very strong CVE database (honestly I was impressed on the findings)
-3. CI/CD Integration
-4. Very easy to use as it does not need any installation (open-source)
-5. Not many false positives in vulnerabilities finding (based on some sample images I have used to scan)
+* Widely used by several companies like Cisco/Microsoft/eBay/Atlassian, etc.
+* Strong CVE database
+* Support for user defined policy enforcement, very important for enterprises
+* Kubernetes integration using an admission controller, the much needed in recent days
+* CI/CD Integration
+* Good API support
+* Easy to install & maintain
+* Supports software packages along with os packages
 
 **Disadvantages:**
 
-1. No graphical UI in open-source version
-2. Almost all the features like Malware scan, package scan K8s integration, etc. are available in Enterprise only
-3. In open-source version there is no clear indication on scan limits - I was getting `Your token will be rate-limited to a reasonable number of scans`
-4. No centralized reporting database in open-source version, hence integration with Kubernetes is not possible
+* No graphical UI in open-source version
+* Several features like Policy GUI editor, RBAC, air-gapped data feed, etc. are available in Enterprise only
+* No graphical reports in open-source version
+* There are few false positives in vulnerabilities finding (based on some sample images I have used to scan)
 
-
-#### [Dagda](https://github.com/eliasgranderubio/dagda)
+### [Aqua](https://www.aquasec.com/)
 
 **Advantages:**
 
-1. New tool but it is coming in the comparison study with other tools.
-2. Very strong CVE database
-3. CI/CD Integration
-4. Easy/Cheaper to maintain and install as it does not involve much storage
-5. Support many software packages (Java/NodeJS/Python/etc.) along with os packages
+* Widely used by several companies
+* Very strong CVE database (honestly I was impressed on the findings)
+* CI/CD Integration
+* Very easy to use as it does not need any installation (open-source)
+* Not many false positives in vulnerabilities finding (based on some sample images I have used to scan)
 
 **Disadvantages:**
 
-1. No graphical UI
-2. No support for user defined policy enforcement
-3. No Kubernetes integration
-4. There are many false positives in vulnerabilities finding (based on some sample images I have used to scan)
+* No graphical UI in open-source version
+* Almost all the features like Malware scan, package scan K8s integration, etc. are available in Enterprise only
+* In open-source version there is no clear indication on scan limits - I was getting `Your token will be rate-limited to a reasonable number of scans`
+* No centralized reporting database in open-source version, hence integration with Kubernetes is not possible
 
+### [Dagda](https://github.com/eliasgranderubio/dagda)
 
-#### Factors to be considered for choosing the right tool
+**Advantages:**
+
+* New tool but it is coming in the comparison study with other tools.
+* Very strong CVE database
+* CI/CD Integration
+* Easy/Cheaper to maintain and install as it does not involve much storage
+* Support many software packages (Java/NodeJS/Python/etc.) along with os packages
+
+**Disadvantages:**
+
+* No graphical UI
+* No support for user defined policy enforcement
+* No Kubernetes integration
+* There are many false positives in vulnerabilities finding (based on some sample images I have used to scan)
+
+## Factors to be considered for choosing the right tool
+
+------------------------------------------
 
 While choosing the appropriate tool from the list above, you may keep in mind the following points - (I have tried the best fit according to me for each points)
 
-1. **Scale of Business:** For a small scale organization (~10 docker images) some registry solutions like Docker Enterprise Hub (cloud) or Harbor (OnPrem) might work well as not much extra attention needed for image security scan.
-2. **Open Source Community driven:** If you want to choose purely community driven open source, you may go for Anchore or Clair or Dagda. Make sure to articulate the cost/effort needed to address the missing features that you need.
-3. **Custom Policy:** Anchore is a clear winner here, you can have several meaningful policies to be enforced, like password in container, some vulnerable files in container (`~/.aws/credentials`) etc.
-4. **Security Gateway in runtime:** Anchore again is a clear winner here (other tools like Dagda/Clair can be extended with some effort). With Kubernetes admission controller support it works well as a security gateway in Kubernetes. For example if some images are found to be vulnerable or violate custom policy, the respective Pod can be restricted to run in Kubernetes cluster (several customization can be done w.r.t. the gateway configuration)
-5. **Effort to address:** This is one of the important factor we often ignore while choosing any tool. After getting to know about vulnerabilities how costly (effort wise) it is to address them, here false positives plays a role, hence Aqua might be a possible tool as it is having less false positives
-
+* **Scale of Business:** For a small scale organization (~10 docker images) some registry solutions like Docker Enterprise Hub (cloud) or Harbor (OnPrem) might work well as not much extra attention needed for image security scan.
+* **Open Source Community driven:** If you want to choose purely community driven open source, you may go for Anchore or Clair or Dagda. Make sure to articulate the cost/effort needed to address the missing features that you need.
+* **Custom Policy:** Anchore is a clear winner here, you can have several meaningful policies to be enforced, like password in container, some vulnerable files in container (`~/.aws/credentials`) etc.
+* **Security Gateway in runtime:** Anchore again is a clear winner here (other tools like Dagda/Clair can be extended with some effort). With Kubernetes admission controller support it works well as a security gateway in Kubernetes. For example if some images are found to be vulnerable or violate custom policy, the respective Pod can be restricted to run in Kubernetes cluster (several customization can be done w.r.t. the gateway configuration)
+* **Effort to address:** This is one of the important factor we often ignore while choosing any tool. After getting to know about vulnerabilities how costly (effort wise) it is to address them, here false positives plays a role, hence Aqua might be a possible tool as it is having less false positives
 
 ## What after scan
+
+------------------------------------------
 
 Wow you are reading this means, now you have some tool in your mind and ready for next steps. Tools can keep reporting vulnerabilities, that help certainly but unless someone fix them appropriately it will not add much values w.r.t. security of the application.
 
