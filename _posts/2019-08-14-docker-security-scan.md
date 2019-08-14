@@ -14,6 +14,8 @@ As Docker containers become an almost ubiquitous method of packaging and deployi
 In this post I will walk through couple of tools/methodologies that are well known for Docker image scan and their advantages/disadvantages.
 This might be useful for making the decision of right choice of the tool.
 
+------------------------------------------
+
 ## What Scan Does
 
 ------------------------------------------
@@ -57,6 +59,8 @@ However it is important to note what all the scan can not cover, it might not co
 
 Even I have seen common issues with not identifying vulnerabilities in downloaded packages, they are majorly because of renaming the downloaded packages and removing the version information's.
 
+------------------------------------------
+
 ## In-build Scan in Registry
 
 ------------------------------------------
@@ -68,6 +72,8 @@ Among them Harbor and QUAY use Clair, and I am not sure yet about Docker Hub Sec
 Scanning in Registry is very simple, most of the cases nothing needs to be done additionally other than publishing the image and based on the process mentioned in respective documentation the scan will be triggered and also reports can be viewed.
 
 In some registry solution like Harbor supports additional features to invoke on-demand scan, reports via API (needed to enforce policy, I will discuss that later in this post), etc. Check the document of Harbor for more details.
+
+------------------------------------------
 
 ## Scan in Dedicated tools
 
@@ -147,6 +153,8 @@ There are several open-source/commercial tools are available to perform Docker i
 * No Kubernetes integration
 * There are many false positives in vulnerabilities finding (based on some sample images I have used to scan)
 
+------------------------------------------
+
 ## Factors to be considered for choosing the right tool
 
 ------------------------------------------
@@ -158,6 +166,8 @@ While choosing the appropriate tool from the list above, you may keep in mind th
 * **Custom Policy:** Anchore is a clear winner here, you can have several meaningful policies to be enforced, like password in container, some vulnerable files in container (`~/.aws/credentials`) etc.
 * **Security Gateway in runtime:** Anchore again is a clear winner here (other tools like Dagda/Clair can be extended with some effort). With Kubernetes admission controller support it works well as a security gateway in Kubernetes. For example if some images are found to be vulnerable or violate custom policy, the respective Pod can be restricted to run in Kubernetes cluster (several customization can be done w.r.t. the gateway configuration)
 * **Effort to address:** This is one of the important factor we often ignore while choosing any tool. After getting to know about vulnerabilities how costly (effort wise) it is to address them, here false positives plays a role, hence Aqua might be a possible tool as it is having less false positives
+
+------------------------------------------
 
 ## What after scan
 
