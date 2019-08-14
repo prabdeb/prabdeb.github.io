@@ -4,7 +4,7 @@ title:  "Docker Continuous Security Scan"
 date:  2019-08-14
 desc: "Docker Continuous Security Scan"
 keywords: "docker,security,dagda,anchore,clair,CI,harbor,quay"
-categories: [Devops, CI/CD]
+categories: [CICD, DevOps]
 tags: [docker,security,dagda,anchore,clair,CI,harbor,quay]
 icon: icon-html
 ---
