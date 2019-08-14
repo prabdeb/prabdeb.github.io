@@ -191,4 +191,12 @@ WORKDIR /usr/share/nginx/html
 COPY dist/cicd-anchore-portal/ .
 ```
 
+------------------------------------------
+
+## What about continuous (CI/CD) scan
+
+------------------------------------------
+
+Wait I haven't talked about continuous scan yet, stay tuned will come up with the continuous (part of CI/CD) scan soon!
+
 ---
