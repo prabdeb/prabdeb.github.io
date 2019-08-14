@@ -197,6 +197,6 @@ COPY dist/cicd-anchore-portal/ .
 
 ------------------------------------------
 
-Wait I haven't talked about continuous scan yet, stay tuned will come up with the continuous (part of CI/CD) scan soon!
+Wait I haven't talked about continuous scan yet, stay tuned, I will come up with the continuous (part of CI/CD) scan post soon!
 
 ---
