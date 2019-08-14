@@ -3,8 +3,8 @@ layout: post
 title:  "Docker Continuous Security Scan"
 date:  2019-08-14
 desc: "Docker Continuous Security Scan"
-keywords: "docker,security,dagda,anchore,clair,harbor,quay"
-categories: [Devops]
+keywords: "docker,security,dagda,anchore,clair,CI,harbor,quay"
+categories: [Devops, cicd]
 tags: [docker,security,dagda,anchore,clair,CI,harbor,quay]
 icon: icon-html
 ---
