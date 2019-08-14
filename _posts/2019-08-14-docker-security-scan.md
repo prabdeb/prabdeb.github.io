@@ -4,12 +4,12 @@ title:  "Docker Continuous Security Scan"
 date:  2019-08-14
 desc: "Docker Continuous Security Scan"
 keywords: "docker,security,dagda,anchore,clair,CI,harbor,quay"
-categories: [CICD, DevOps]
+categories: [Devops]
 tags: [docker,security,dagda,anchore,clair,CI,harbor,quay]
 icon: icon-html
 ---
 
-As Docker containers become an almost ubiquitous method of packaging and deploying applications, the instances of malware have increased. Securing Docker images is now a top priority. Docker image security scan is becoming a practice in most of the organizations (if not, it needs to be prioritized). It is recommended to include Docker images scan during execution of CI, like a continuous scan. To make it more elaborated, whenever new Docker images are build they should get scanned too.
+As Docker containers become an almost common method of packaging and deploying applications, the instances of malware have increased. Securing Docker images is now a top priority. Docker image security scan is becoming a practice in most of the organizations (if not, it needs to be prioritized). It is recommended to include Docker images scan during execution of CI, like a continuous scan. To make it more elaborated, whenever new Docker images are build they should get scanned too.
 
 In this post I will walk through couple of tools/methodologies that are well known for Docker image scan and their advantages/disadvantages.
 This might be useful for making the decision of right choice of the tool.
