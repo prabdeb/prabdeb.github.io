@@ -9,6 +9,6 @@ tags: [prabdeb,blog]
 icon: icon-html
 ---
 
-Just started, watch for more here!
+Just started to write :), watch for more here!
 
 ---
