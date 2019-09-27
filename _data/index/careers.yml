@@ -4,13 +4,13 @@
     detail: Cisco Systems (India) Pvt. Ltd.
     i18n: company_a
   desc:
-    detail: Dedicated to Several Automation Activities mainly Cloud native CI/CD Solution implementation, Quality Assurance, Research, etc.
+    detail: Dedicated to Several Automation Activities mainly DevOps for Cloud Infrastructure, Cloud native CI/CD Solution implementation, Quality Assurance, Research, etc.
     i18n: company_a_desc
   date:
     detail: Mar. 2015
     i18n: company_a_date
   job:
-    detail: Automation Engineer, DevOps CI/CD
+    detail: Software Engineer IV, DevOps & CI/CD
     i18n: company_a_job
   icon: fa-plus-square
 

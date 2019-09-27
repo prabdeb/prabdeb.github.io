@@ -3,4 +3,4 @@
 label: Ability
 id : cs
 aspects: GIT, Maven, Gradle, Python, Go, Groovy, Perl, Docker, Ansible, Puppet, Terraform, Helm, Kubernetes, AWS, Jenkins, Drone, Spinnaker
-percentage: 90, 80, 60, 80, 80, 60, 80, 70, 75, 70, 60, 75, 75, 60, 85, 90, 85
+percentage: 90, 80, 60, 80, 80, 60, 80, 70, 85, 60, 75, 75, 75, 60, 85, 90, 85
